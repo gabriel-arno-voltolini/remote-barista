@@ -6,7 +6,7 @@ The platform to make your coffee remotely
 
 ## High-Level Architecture
 
-![Architecture Diagram](docs/system_architecture-Page-1.svg)
+![Architecture Diagram](docs/system_architecture-Page-1.png)
 
 ## Components
 
