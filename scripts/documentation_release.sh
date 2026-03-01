@@ -2,7 +2,7 @@
 set -euo pipefail
 
 echo "📚 Starting documentation release..."
-echo "🖼 Exporting drawio to SVG..."
+echo "🖼 Exporting drawio to PNG..."
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
@@ -17,7 +17,7 @@ fi
 docker run --rm \
   -v "$REPO_ROOT":/data \
   rlespinasse/drawio-export \
-  --format svg \
+  --format png \
   --output /data/docs \
   /data/docs/system_architecture.drawio
 
