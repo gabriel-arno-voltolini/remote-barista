@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package robot;
+
+option java_multiple_files = true;
+
+
+message ArmPosition {
+  int32 x = 1;
+  int32 y = 2;
+  int32 z = 3;
+}
+
+message ClawPosition {
+  int32 position = 1;
+}
+
+message RobotBenchRequest {
+  string robot_id = 1;          // ULID
+  bool bench_lights = 2;
+  float action_time_seconds = 3;
+}
+
+message RobotBenchResponse {
+  string robot_id = 1;          // ULID
+  float action_time_seconds = 2;
+}
+
+message RobotMoveRequest {
+  string robot_id = 1;          // ULID
+  ArmPosition arm = 2;
+  ClawPosition claw = 3;
+}
+
+message RobotMoveResponse {
+  string robot_id = 1;          // ULID
+  float action_time_seconds = 2;
+}
+
+message RobotStatsRequest {
+  string robot_id = 1;          // ULID
+}
+
+message RobotStatsResponse {
+  string robot_id = 1;          // ULID
+  int64 uptime_seconds = 2;
+  float feed_voltage = 3;
+  float connection_strength = 4;
+}

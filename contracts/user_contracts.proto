@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package user;
+
+message UserCreateRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message UserCreateResponse {
+  string user_id = 1; // ULID
+  string email = 2;
+  int64 created_at = 3; // Unix timestamp
+  int64 updated_at = 4; // Unix timestamp
+}
+
+message UserLoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message UserLoginResponse {
+  string token = 1;  // JWT
+}
+
+message UserSessionTimeout {
+    string user_id = 1; // ULID
+}
